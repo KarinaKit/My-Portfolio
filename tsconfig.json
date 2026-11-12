@@ -1,0 +1,42 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src", //путь ts
+    "outDir": "./public/js", // путь js 
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "esnext", //отвечает за обработку модулей и export 
+    "target": "es2020", //определяет версию компиляции кода 
+    "types": [],
+    // For nodejs:
+    // "lib": ["esnext"],
+    // "types": ["node"],
+    // and npm install -D @types/node
+
+    // Other Outputs
+    "sourceMap": true, // создает карту соответствий между скопилированного ts и js 
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "strict": true, // определяет на сколько строго будет проверятся код
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "legacy", //воспринимает все как отдельный module
+    "skipLibCheck": true,
+  }
+}

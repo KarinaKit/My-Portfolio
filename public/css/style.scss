@@ -1,0 +1,854 @@
+body {
+    background: rgb(27, 20, 17);
+    cursor: url(../img/wand-cursor.png) 4 4, auto;
+}
+
+button,
+a,
+input,
+textarea,
+select,
+button:hover,
+button:active,
+a:hover,
+a:active,
+.content__social input[type="checkbox"] {
+    cursor: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+//========== Dialogs window ==============
+.content__dialog[open] {
+    display: flex;
+}
+
+.content__dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.content__dialog {
+    display: none;
+    flex-direction: column;
+    border: none;
+    padding: 36px 66px;
+    background-color: #740001;
+    color: #eeba30;
+    border-radius: 24px;
+}
+
+.content__company-title {
+    margin-bottom: 24px;
+}
+
+.content__name {
+    margin-bottom: 3px;
+    padding: 6px 9px;
+    font-size: 12px;
+    background-color: #c6a48d;
+    border: 2px solid #65291a;
+    border-radius: 24px;
+}
+
+.content__clue {
+    margin-bottom: 24px;
+    font-size: 15px;
+    color: #b49132;
+}
+
+.content__send {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: #d6ad55;
+    padding: 8px 24px;
+    font-size: 14px;
+    color: #4b0b16;
+    border: 1px solid #f2d995;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 8px 5px 14px rgba(214, 173, 85, 0.45);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+// ========= Page ===============
+.header__page {
+    position: relative;
+    padding: 0 30px;
+    background: rgb(27, 20, 17);
+}
+
+.header__line {
+    margin-bottom: 26px;
+}
+
+.header__contacts {
+    position: fixed;
+    top: 0;
+    width: 90%;
+    box-sizing: border-box;
+    z-index: 1000;
+    padding-bottom: 18px;
+    
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgb(27, 20, 17);
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(-50%);
+
+        width: 100%;
+        height: 2px;
+        background: rgb(255, 243, 224);
+    }
+}
+
+//=====mobail=======
+@media (max-width: 768px) {
+    .header__contacts {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+.logo__btn {
+    margin-right: auto;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid rgb(255, 243, 224);
+    background: red;
+    color: rgb(255, 255, 255);
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.chapter {
+    text-decoration: none;
+    color: rgb(255, 243, 224);
+    font-weight: 600;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: 2px solid rgb(255, 243, 224);
+    border-radius: 15px;
+    font-size: 16px;
+    border-radius: 999px;
+    font-weight: 600;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 7px 0 rgb(255, 243, 224);
+    }
+
+    &:active {
+        transform: translateY(8px);
+        box-shadow: 0 0 0 rgb(255, 243, 224);
+    }
+}
+
+.chapter__red {
+    background: red;
+    color: white;
+    text-decoration: none;
+}
+
+//===========Content===========
+
+.content__welcome {
+    flex: 1 1 500px;
+    min-width: 0;
+}
+
+.content {
+    padding-top: 100px;
+}
+
+.content__desc {
+    // display: grid;
+    // grid-template-columns: 1fr 475px;
+    // grid-template-areas:
+    //     "title mascot"
+    //     "lead1 mascot"
+    //     "lead2 mascot"
+    //     "buttons mascot"
+    //     "tap mascot";
+
+    // align-items: center;
+    // gap: 20px 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.content__title {
+    margin-bottom: 24px;
+    grid-area: title;
+
+    color: rgb(255, 243, 224);
+    font-weight: 800;
+}
+
+.content__lead {
+    grid-area: lead1;
+
+
+    font-size: 20px;
+    font-weight: 500;
+    max-width: 560px;
+    color: rgb(255, 243, 224);
+}
+
+.txt__lead {
+    grid-area: lead2;
+}
+
+//========== IMG =============
+.content__img {
+    flex: 0 1 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 44px;
+}
+
+.content__img img {
+    width: 100%;
+    max-width: 475px;
+    height: auto;
+}
+
+
+
+
+.content__desc > .content__actions {
+    grid-area: buttons;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+//========== BUTTON ==============
+
+.content__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 23px;
+    font-size: 14px;
+    padding: 14px 22px;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.content__my-portfolio {
+
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: rgb(255, 243, 224);
+    font-weight: 500;
+    margin-bottom: 20px;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 7px 0 rgb(255, 243, 224);
+    }
+
+    &:active {
+        transform: translateY(8px);
+        box-shadow: 0 0 0 rgb(255, 243, 224);
+    }
+}
+
+.content__offer {
+
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: red;
+    color: rgb(255, 243, 224);
+    border: 2px solid rgb(255, 243, 224);
+    font-weight: 500;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 7px 0 rgb(255, 243, 224);
+    }
+
+    &:active {
+        transform: translateY(8px);
+        box-shadow: 0 0 0 rgb(255, 243, 224);
+    }
+}
+
+.content__tap {
+    grid-area: tap;
+
+    grid-area: tap;
+    position: relative;
+    width: min(600px, 90vw);
+    height: 300px;
+    margin-top: 30px;
+}
+
+.content__btn-run {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: transparent;
+    color: rgb(255, 243, 224);
+    border: 2px solid rgb(255, 243, 224);
+    font-weight: 500;
+
+    transition: transform 0.1s ease;
+}
+
+.content__offer-form {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .content__desc {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+    }
+
+    .content__welcome {
+        width: 100%;
+        flex: none;
+    }
+
+    .content__img {
+        width: 100%;
+        max-width: 470px;
+        flex: none;
+        align-self: center;
+        margin-bottom: 0;
+    }
+
+    .content__offer-form {
+        width: 100%;
+        flex: none;
+    }
+}
+
+
+//============ ABOUT ME ============
+.contnt__title-me {
+    margin-bottom: 24px;
+    color: rgb(255, 243, 224);
+    font-weight: 800;
+    font-size: 28px;
+}
+
+.content__text-me {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(255, 243, 224);
+}
+
+
+
+// ===== МАГИЧЕСКАЯ ПРОГРАММА ОБУЧЕНИЯ =====
+
+.skill__abilities {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+}
+
+// ===== УРОВНИ ОБУЧЕНИЯ =====
+
+.content__my-skills {
+    flex: 1 1 45%;
+    min-width: 0;
+}
+
+.skills__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.list-my-learn {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 125px;
+    width: 100%;
+    padding: 22px;
+    list-style: none;
+    border: 1px solid rgba(216, 182, 106, 0.65);
+    border-radius: 18px;
+    background: linear-gradient(145deg, #39221b, #20120e);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+
+    &::before {
+        content: "✦";
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        color: #d8b66a;
+        font-size: 17px;
+        opacity: 0.8;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        border-color: #e8c66e;
+        box-shadow: 0 8px 22px rgba(216, 182, 106, 0.15);
+    }
+}
+
+.title__list-skills {
+    margin: 0 0 12px;
+    color: #e8c66e;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.text__list-skills {
+    margin: 0;
+    color: #cbbba8;
+    font-size: 15px;
+    font-style: italic;
+}
+
+// ===== МОИ НАВЫКИ И БУДУЩИЕ ЗАКЛИНАНИЯ =====
+
+.skill__my-skills {
+    display: flex;
+    flex: 1 1 55%;
+    flex-direction: column;
+    gap: 22px;
+    min-width: 0;
+}
+
+.abilities,
+.following__skills {
+    box-sizing: border-box;
+    padding: 24px;
+    border: 1px solid rgba(216, 182, 106, 0.65);
+    border-radius: 20px;
+    background: linear-gradient(145deg, #2d1b16, #1c100d);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+}
+
+.skills__languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    border: none;
+}
+
+.skills__name {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    padding: 9px 15px;
+    color: #f2dfbd;
+    font-size: 14px;
+    border: 1px solid rgba(216, 182, 106, 0.55);
+    border-radius: 30px;
+    background: rgba(216, 182, 106, 0.08);
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+
+    &:hover {
+        color: #28150e;
+        background: #d8b66a;
+        transform: translateY(-2px);
+    }
+}
+
+// ===== СЛЕДУЮЩИЙ СЕМЕСТР =====
+
+.following__skills {
+    border-color: rgba(255, 243, 224, 0.35);
+}
+
+.skill__following-abilites {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill__following {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    padding: 9px 15px;
+    color: #e8ddc9;
+    font-size: 14px;
+    border: 1px dashed rgba(255, 243, 224, 0.45);
+    border-radius: 30px;
+    background: rgba(255, 243, 224, 0.04);
+    transition: border-color 0.3s, background 0.3s;
+
+    &::before {
+        content: "✧";
+        margin-right: 7px;
+        color: #d8b66a;
+    }
+
+    &:hover {
+        border-color: #d8b66a;
+        background: rgba(216, 182, 106, 0.1);
+    }
+}
+
+// ===== АДАПТИВНОСТЬ =====
+
+@media (max-width: 1012px) {
+    .skill__abilities {
+        flex-direction: column;
+    }
+
+    .skill__my-skills {
+        flex-direction: row;
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+
+    .abilities,
+    .following__skills {
+        flex: 1 1 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills__list {
+        grid-template-columns: 1fr;
+    }
+
+    .list-my-learn {
+        min-height: auto;
+    }
+
+    .skill__my-skills {
+        flex-direction: column;
+    }
+
+    .abilities,
+    .following__skills {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+///////============= старый код======================================
+// .skill__abilities {
+//     display: flex;
+//     gap: 10px;
+// }
+
+// .skills__list {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 20px;
+//     margin-bottom: 34px;
+// }
+
+// .list-my-learn {
+//     border: 2px solid #d8b66a;
+//     padding: 14px 43px;
+//     border-radius: 40px;
+//     list-style: none;
+//     width: 400px;
+// }
+
+// .skill__my-skills {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 20px;
+// }
+
+// .title__list-skills {
+//     color: rgb(255, 243, 224);
+//     font-size: 18px;
+//     margin-bottom: 10px;
+// }
+
+// .text__list-skills {
+//     color: rgb(255, 243, 224);
+//     font-size: 15px;
+// }
+
+// .skills__languages {
+//     border: 2px solid rgb(255, 243, 224);
+//     padding: 14px 23px;
+//     border-radius: 24px;
+// }
+
+// .skills__name {
+//     display: inline-flex;
+//     flex-wrap: wrap;
+//     gap: 5px;
+//     border: 2px dotted rgb(255, 243, 224);
+//     padding: 14px 23px;
+//     border-radius: 20px;
+//     color: rgb(255, 243, 224);
+// }
+
+// .following__skills {
+//     border: 2px solid rgb(255, 243, 224);
+//     padding: 14px 23px;
+//     border-radius: 24px;
+// }
+
+// .skill__following {
+//     color: rgb(255, 243, 224);
+// }
+
+// .skill__following-abilites {
+    
+// }
+
+// .skill__following {
+//     display: inline-flex;
+//     flex-wrap: wrap;
+//     gap: 5px;
+//     border: 2px dotted rgb(255, 243, 224);
+//     padding: 14px 23px;
+//     border-radius: 20px;
+// }
+
+// //==== MIBAIL ======
+
+// @media (max-width: 768px) {
+//     .skill__abilities {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 12px;
+//     }
+// }
+
+// @media (max-width: 1012px) {
+//     .skill__my-skills {
+//     display: flex;
+//     gap: 5px;
+//     }
+// }
+///==================== тут он заканчивается ============================
+
+//============ FORM =============
+
+.content__offer-form {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 33px;
+    color: #e8ddc9;
+    background: linear-gradient(145deg, #2a1712, #160e0b);
+    border: 2px solid #d8b66a;
+    border-radius: 30px;
+    box-shadow: 0 0 25px rgba(216, 182, 106, 0.12);
+}
+
+.content__offer-title {
+    margin-bottom: 15px;
+    color: #d8ad36;
+    font-size: 40px;
+    text-align: center;
+}
+
+.content__offer-description {
+    margin: 0 0 35px;
+    color: #e8ddc9;
+    font-size: 22px;
+    text-align: center;
+}
+
+.content__form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.content__one-input {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.content__form label,
+.content__social legend {
+    color: #e8ddc9;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.content__form input[type="text"],
+.content__form input[type="tel"],
+.content__form input[type="email"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 18px;
+    color: #351b12;
+    font-size: 18px;
+    background-color: #d2ad91;
+    border: 3px solid #8b563b;
+    border-radius: 18px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.content__form input:focus {
+    border-color: #e3bd58;
+    box-shadow: 0 0 12px rgba(227, 189, 88, 0.35);
+}
+
+.content__form input::placeholder {
+    color: #765744;
+}
+
+.content__social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 0 12px;
+    padding: 18px;
+    border: 2px solid #8b563b;
+    border-radius: 18px;
+}
+
+.content__social legend {
+    padding: 0 10px;
+    color: #d8ad36;
+}
+
+.content__social label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+}
+
+.content__social input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #a00000;
+    cursor: pointer;
+}
+
+.content__form-send {
+    align-self: center;
+    margin-top: 20px;
+    padding: 18px 40px;
+    color: #3b1009;
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #e6c36b, #c99a3d);
+    border: 2px solid #f0d58b;
+    border-radius: 22px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.content__form-send:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 22px rgba(230, 195, 107, 0.4);
+}
+
+.content__form-send:active {
+    transform: translateY(0);
+}
+
+// ============ FORM DESKTOP =============
+
+@media screen and (min-width: 1024px) {
+
+    .content__form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 20px 35px;
+        width: 100%;
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .content__one-input {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 calc(50% - 17.5px);
+        min-width: 0;
+        box-sizing: border-box;
+        gap: 14px;
+    }
+
+    .content__one-input input[type="text"],
+    .content__one-input input[type="tel"],
+    .content__one-input input[type="email"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .content__social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .content__social label {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .content__form-send {
+        flex: 0 0 auto;
+        align-self: center;
+        margin: 10px auto 0;
+    }
+}
